@@ -1,7 +1,7 @@
 <template>
   <div class="task-card my-style">
     <div>
-      <h4>{{model.title}}</h4>
+      <h4>{{ model.title }}</h4>
       <p>{{ model.description }}</p>
     </div>
     <div>
@@ -11,7 +11,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   emits: ['onDone', 'onRemove'],
@@ -20,19 +19,21 @@ export default {
       required: true,
       default: {
         id: 0,
-        title: 'Create tast',
-        description: 'And create',
+        title: 'Create video',
+        description: 'And upload on YouTube',
         status: false
       }
     }
   },
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     const emitOnDone = () => {
       emit('onDone')
     }
+
     const emitOnRemove = () => {
       emit('onRemove')
     }
+
     return {
       emitOnDone,
       emitOnRemove
